@@ -3,14 +3,22 @@
 #include "include.h"
 #include "Queue.h"
 
-int visited[16][16] = {0};
-int Walls[16][16] = {0};
+// visited => To make indication if i have visited this cell before or not if yes then i can't make operations on it again
+// Walls => make some thing like the maze walls but using directions (Check Directions Section in include header file)
+// neighbour (1->4(x,y)) => this 8 variables stores the locations of the four cells neighbouring the current one
+// curr_x_pos , curr_y_pos => stores the current cell
+// buffers => used to convert from intger to string so i can print them in the simulator using APIs
 
+int visited[16][16] = {0}, Walls[16][16] = {0};
 int neighbour_1_x, neighbour_1_y, neighbour_2_x, neighbour_2_y, neighbour_3_x, neighbour_3_y, neighbour_4_x, neighbour_4_y;
-int Direction = North;
+int Wall_idx = 0, Direction = North;
+int curr_x_pos = 0, curr_y_pos = 15;
+char buffer_x[50], buffer_y[50], buffer_Text[50];
 
 //------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------
+
+// The Maze which stores the manhaten distances
 
 int Maze[16][16] =
     {
@@ -33,19 +41,14 @@ int Maze[16][16] =
 
 };
 
-int Wall_idx = 0;
-int curr_x_pos = 0, curr_y_pos = 15;
-char buffer_x[50];
-char buffer_y[50];
-char buffer_Text[50];
-
 //----------------------------------------------------------------
 //----------------------------------------------------------------
-//                              MAIN
+//                            MAIN
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 
 Queue q;
+// poped => to store the dequeued cell form the queue to get its neighbours
 QueueNode poped;
 
 int main(int argc, char *argv[])
@@ -53,16 +56,15 @@ int main(int argc, char *argv[])
     initQueue(&q);
     while (1)
     {
-
-        //----------------------------------------
-        //  update walls & print direction
-        //----------------------------------------
+        //--------------------------------------------------
+        //  update walls & print The Positions of this Walls
+        //--------------------------------------------------
         Update_Walls(curr_x_pos, curr_y_pos);
         Wall_printer();
-        //----------------------------------------
+        //--------------------------------------------------
 
-        //----------------------------------------------
-        //----------------------------------------------
+        //--------------------------------------------------
+        //--------------------------------------------------
         // get neighbours:)
         Get_neighbours(curr_x_pos, curr_y_pos);
         printt("neighbour 1 ");
@@ -82,6 +84,7 @@ int main(int argc, char *argv[])
         sprintf(buffer_y, "%d", neighbour_4_y);
         printtt(buffer_x, buffer_y);
         //----------------------------------------------
+        //              VALIDATE NEIGHBOURS (the neighbours for only the current cell not all cell)
         //----------------------------------------------
         if (neighbour_isValid(neighbour_1_x, neighbour_1_y, East))
         {
@@ -150,18 +153,21 @@ int main(int argc, char *argv[])
 
         //---------------------------------------------------------------------------
         //---------------------------------------------------------------------------
-        //                          Manhaten
+        //                               Manhaten
         //---------------------------------------------------------------------------
         //---------------------------------------------------------------------------
 
+        // enqueue The goal cell to start with them to make manhaten
         enqueue(&q, 7, 7);
         enqueue(&q, 7, 8);
         enqueue(&q, 8, 7);
         enqueue(&q, 8, 8);
+        // make them as visited to prevent adding them again into the queue
         Make_visited(7, 7);
         Make_visited(7, 8);
         Make_visited(8, 7);
         Make_visited(8, 8);
+        // print the manhaten values on the simulator maze
         API_setText(7, 7, "0");
         API_setText(7, 8, "0");
         API_setText(8, 7, "0");
@@ -206,6 +212,7 @@ int main(int argc, char *argv[])
             }
         }
 
+        // Make all cells as not visited to update manhaten in the next Move
         for (int i = 0; i < 16; i++)
         {
             for (int j = 0; j < 16; j++)
@@ -217,9 +224,83 @@ int main(int argc, char *argv[])
         //---------------------------------------------------------------------------
 
         // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+        // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+        //                      FLOOD_FILL
+        // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+        // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+        if (neighbour_isValid(neighbour_1_x, neighbour_1_y, East) && (Maze[neighbour_1_x][neighbour_1_y] == Maze[curr_x_pos][curr_y_pos] - 1))
+        {
+            printt("neighbour 1 ");
+            sprintf(buffer_x, "%d", neighbour_1_x);
+            sprintf(buffer_y, "%d", neighbour_1_y);
+            printtt(buffer_x, buffer_y);
+            printt("Is Valid ");
+
+            // check the direc & the pos of the neighbour :(
+        }
+        else
+        {
+            printt("neighbour 1 ");
+            sprintf(buffer_x, "%d", neighbour_1_x);
+            sprintf(buffer_y, "%d", neighbour_1_y);
+            printtt(buffer_x, buffer_y);
+            printt("Is not Valid ");
+        }
+        if (neighbour_isValid(neighbour_2_x, neighbour_2_y, West))
+        {
+            printt("neighbour 2 ");
+            sprintf(buffer_x, "%d", neighbour_2_x);
+            sprintf(buffer_y, "%d", neighbour_2_y);
+            printtt(buffer_x, buffer_y);
+            printt("Is Valid ");
+        }
+        else
+        {
+            printt("neighbour 2 ");
+            sprintf(buffer_x, "%d", neighbour_2_x);
+            sprintf(buffer_y, "%d", neighbour_2_y);
+            printtt(buffer_x, buffer_y);
+            printt("Is not Valid ");
+        }
+        if (neighbour_isValid(neighbour_3_x, neighbour_3_y, South))
+        {
+            printt("neighbour 3 ");
+            sprintf(buffer_x, "%d", neighbour_3_x);
+            sprintf(buffer_y, "%d", neighbour_3_y);
+            printtt(buffer_x, buffer_y);
+            printt("Is Valid ");
+        }
+        else
+        {
+            printt("neighbour 3 ");
+            sprintf(buffer_x, "%d", neighbour_3_x);
+            sprintf(buffer_y, "%d", neighbour_3_y);
+            printtt(buffer_x, buffer_y);
+            printt("Is not Valid ");
+        }
+        if (neighbour_isValid(neighbour_4_x, neighbour_4_y, North))
+        {
+            printt("neighbour 4 ");
+            sprintf(buffer_x, "%d", neighbour_4_x);
+            sprintf(buffer_y, "%d", neighbour_4_y);
+            printtt(buffer_x, buffer_y);
+            printt("Is Valid ");
+        }
+        else
+        {
+            printt("neighbour 4 ");
+            sprintf(buffer_x, "%d", neighbour_4_x);
+            sprintf(buffer_y, "%d", neighbour_4_y);
+            printtt(buffer_x, buffer_y);
+            printt("Is not Valid ");
+        }
+
+        // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+        // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         // just  wall following algo
-        //----------------------------------------
-        //----------------------------------------
+        //------------------------------------------------------------
+        //------------------------------------------------------------
         if (!API_wallLeft())
         {
             API_turnLeft();
