@@ -37,29 +37,20 @@ int Wall_idx = 0;
 int curr_x_pos = 0, curr_y_pos = 15;
 char buffer_x[50];
 char buffer_y[50];
+char buffer_Text[50];
 
 //----------------------------------------------------------------
 //----------------------------------------------------------------
-//                  MAIN
+//                              MAIN
 //----------------------------------------------------------------
 //----------------------------------------------------------------
+
+Queue q;
+QueueNode poped;
 
 int main(int argc, char *argv[])
 {
-
-    // Queue q;
-    // initQueue(&q);
-    // QueueNode poped;
-
-    // enqueue(&q, 7, 7);
-    // enqueue(&q, 7, 8);
-    // enqueue(&q, 8, 7);
-    // enqueue(&q, 8, 8);
-    // Make_visited(7, 7);
-    // Make_visited(7, 8);
-    // Make_visited(8, 7);
-    // Make_visited(8, 8);
-
+    initQueue(&q);
     while (1)
     {
 
@@ -156,6 +147,74 @@ int main(int argc, char *argv[])
             printtt(buffer_x, buffer_y);
             printt("Is not Valid ");
         }
+
+        //---------------------------------------------------------------------------
+        //---------------------------------------------------------------------------
+        //                          Manhaten
+        //---------------------------------------------------------------------------
+        //---------------------------------------------------------------------------
+
+        enqueue(&q, 7, 7);
+        enqueue(&q, 7, 8);
+        enqueue(&q, 8, 7);
+        enqueue(&q, 8, 8);
+        Make_visited(7, 7);
+        Make_visited(7, 8);
+        Make_visited(8, 7);
+        Make_visited(8, 8);
+        API_setText(7, 7, "0");
+        API_setText(7, 8, "0");
+        API_setText(8, 7, "0");
+        API_setText(8, 8, "0");
+
+        while (!isEmpty(&q))
+        {
+            printt("in queue");
+            poped = dequeue(&q);
+            Get_neighbours(poped.x, poped.y);
+            if (neighbour_isValid(neighbour_1_x, neighbour_1_y, East))
+            {
+                Maze[neighbour_1_x][neighbour_1_y] = Maze[poped.x][poped.y] + 1;
+                sprintf(buffer_Text, "%d", Maze[poped.x][poped.y] + 1);
+                API_setText(neighbour_1_x, neighbour_1_y, buffer_Text); // print Manhaten on  The maze
+                enqueue(&q, neighbour_1_x, neighbour_1_y);
+                Make_visited(neighbour_1_x, neighbour_1_y);
+            }
+            if (neighbour_isValid(neighbour_2_x, neighbour_2_y, West))
+            {
+                Maze[neighbour_2_x][neighbour_2_y] = Maze[poped.x][poped.y] + 1;
+                sprintf(buffer_Text, "%d", Maze[poped.x][poped.y] + 1);
+                API_setText(neighbour_2_x, neighbour_2_y, buffer_Text); // print Manhaten on  The maze
+                enqueue(&q, neighbour_2_x, neighbour_2_y);
+                Make_visited(neighbour_2_x, neighbour_2_y);
+            }
+            if (neighbour_isValid(neighbour_3_x, neighbour_3_y, South))
+            {
+                Maze[neighbour_3_x][neighbour_3_y] = Maze[poped.x][poped.y] + 1;
+                sprintf(buffer_Text, "%d", Maze[poped.x][poped.y] + 1);
+                API_setText(neighbour_3_x, neighbour_3_y, buffer_Text); // print Manhaten on  The maze
+                enqueue(&q, neighbour_3_x, neighbour_3_y);
+                Make_visited(neighbour_3_x, neighbour_3_y);
+            }
+            if (neighbour_isValid(neighbour_4_x, neighbour_4_y, North))
+            {
+                Maze[neighbour_4_x][neighbour_4_y] = Maze[poped.x][poped.y] + 1;
+                sprintf(buffer_Text, "%d", Maze[poped.x][poped.y] + 1);
+                API_setText(neighbour_4_x, neighbour_4_y, buffer_Text); // print Manhaten on  The maze
+                enqueue(&q, neighbour_4_x, neighbour_4_y);
+                Make_visited(neighbour_4_x, neighbour_4_y);
+            }
+        }
+
+        for (int i = 0; i < 16; i++)
+        {
+            for (int j = 0; j < 16; j++)
+            {
+                visited[i][j] = 0;
+            }
+        }
+        //---------------------------------------------------------------------------
+        //---------------------------------------------------------------------------
 
         // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
         // just  wall following algo
@@ -299,7 +358,7 @@ int neighbour_isValid(int neighbour_x, int neighbour_y, int Neighbour_Pos)
         break;
     }
 
-    if (visited[neighbour_x][neighbour_y] == 0 && neighbour_x >= 0 && neighbour_x < 15 && neighbour_y >= 0 && neighbour_y < 15)
+    if (visited[neighbour_x][neighbour_y] == 0 && neighbour_x >= 0 && neighbour_x < Maze_Limit && neighbour_y >= 0 && neighbour_y < Maze_Limit)
     {
         return true;
     }
