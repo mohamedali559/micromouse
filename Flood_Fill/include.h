@@ -25,6 +25,8 @@
 #define East_West 13
 #define North_South 14
 
+#define Maze_Limit 16
+
 // typedef char u8;
 
 int Is_visited(int x_pos, int y_pos);

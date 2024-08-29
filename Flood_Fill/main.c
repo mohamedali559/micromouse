@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
             printtt(buffer_x, buffer_y);
             printt("Is not Valid ");
         }
-        if (neighbour_isValid(neighbour_3_x, neighbour_3_y, North))
+        if (neighbour_isValid(neighbour_3_x, neighbour_3_y, South))
         {
             printt("neighbour 3 ");
             sprintf(buffer_x, "%d", neighbour_3_x);
@@ -140,7 +140,7 @@ int main(int argc, char *argv[])
             printtt(buffer_x, buffer_y);
             printt("Is not Valid ");
         }
-        if (neighbour_isValid(neighbour_4_x, neighbour_4_y, South))
+        if (neighbour_isValid(neighbour_4_x, neighbour_4_y, North))
         {
             printt("neighbour 4 ");
             sprintf(buffer_x, "%d", neighbour_4_x);
@@ -272,27 +272,27 @@ int neighbour_isValid(int neighbour_x, int neighbour_y, int Neighbour_Pos)
     switch (Neighbour_Pos)
     {
     case North:
-        if (Walls[neighbour_x][neighbour_y] == South || Walls[neighbour_x][neighbour_y] == South_East || Walls[neighbour_x][neighbour_y] == South_West || Walls[neighbour_x][neighbour_y] == South_East_Nourth || Walls[neighbour_x][neighbour_y] == South_West_East)
+        if (Walls[neighbour_x][neighbour_y] == South || Walls[neighbour_x][neighbour_y] == South_East || Walls[neighbour_x][neighbour_y] == South_West || Walls[neighbour_x][neighbour_y] == South_East_Nourth || Walls[neighbour_x][neighbour_y] == South_West_East || Walls[neighbour_x][neighbour_y] == South_West_Nourth)
         {
             return false;
         }
         break;
     case South:
-        if (Walls[neighbour_x][neighbour_y] == North || Walls[neighbour_x][neighbour_y] == Nourth_East || Walls[neighbour_x][neighbour_y] == Nourth_West || Walls[neighbour_x][neighbour_y] == South_East_Nourth || Walls[neighbour_x][neighbour_y] == South_West_East)
+        if (Walls[neighbour_x][neighbour_y] == North || Walls[neighbour_x][neighbour_y] == Nourth_East || Walls[neighbour_x][neighbour_y] == Nourth_West || Walls[neighbour_x][neighbour_y] == South_East_Nourth || Walls[neighbour_x][neighbour_y] == South_West_East || Walls[neighbour_x][neighbour_y] == Nourth_West_East)
         {
             return false;
         }
         break;
 
     case East:
-        if (Walls[neighbour_x][neighbour_y] == West || Walls[neighbour_x][neighbour_y] == Nourth_West || Walls[neighbour_x][neighbour_y] == South_West || Walls[neighbour_x][neighbour_y] == South_West_Nourth || Walls[neighbour_x][neighbour_y] == South_West_East)
+        if (Walls[neighbour_x][neighbour_y] == West || Walls[neighbour_x][neighbour_y] == Nourth_West || Walls[neighbour_x][neighbour_y] == South_West || Walls[neighbour_x][neighbour_y] == South_West_Nourth || Walls[neighbour_x][neighbour_y] == South_West_East || Walls[neighbour_x][neighbour_y] == Nourth_West_East)
         {
             return false;
         }
         break;
 
     case West:
-        if (Walls[neighbour_x][neighbour_y] == East || Walls[neighbour_x][neighbour_y] == Nourth_East || Walls[neighbour_x][neighbour_y] == South_East || Walls[neighbour_x][neighbour_y] == South_East_Nourth || Walls[neighbour_x][neighbour_y] == South_West_East)
+        if (Walls[neighbour_x][neighbour_y] == East || Walls[neighbour_x][neighbour_y] == Nourth_East || Walls[neighbour_x][neighbour_y] == South_East || Walls[neighbour_x][neighbour_y] == South_East_Nourth || Walls[neighbour_x][neighbour_y] == South_West_East || Walls[neighbour_x][neighbour_y] == Nourth_West_East)
         {
             return false;
         }
@@ -329,10 +329,7 @@ int Update_Walls(int x_pos, int y_pos)
             Walls[x_pos][y_pos] = North;
 
             if (y_pos - 1 >= 0) // update the next cell not just mine!
-            {
                 Walls[x_pos][y_pos - 1] = South;
-                printt("update next!!!!!!! South");
-            }
         }
         if (API_wallLeft())
         {
@@ -347,11 +344,8 @@ int Update_Walls(int x_pos, int y_pos)
             Wall_idx = 3;
             Walls[x_pos][y_pos] = East;
 
-            if (x_pos + 1 < 15)
-            {
+            if (x_pos + 1 < Maze_Limit)
                 Walls[x_pos + 1][y_pos] = West;
-                printt("update next!!!!!!! put West");
-            }
         }
         if (API_wallLeft() && API_wallFront())
         {
@@ -383,7 +377,7 @@ int Update_Walls(int x_pos, int y_pos)
             Wall_idx = 8;
             Walls[x_pos][y_pos] = South;
 
-            if (y_pos + 1 < 15)
+            if (y_pos + 1 < Maze_Limit)
                 Walls[x_pos][y_pos + 1] = North;
         }
         if (API_wallLeft())
@@ -391,7 +385,7 @@ int Update_Walls(int x_pos, int y_pos)
             Wall_idx = 9;
             Walls[x_pos][y_pos] = East;
 
-            if (x_pos + 1 < 15)
+            if (x_pos + 1 < Maze_Limit)
                 Walls[x_pos + 1][y_pos] = West;
         }
         if (API_wallRight())
@@ -428,10 +422,10 @@ int Update_Walls(int x_pos, int y_pos)
     case East:
         if (API_wallFront())
         {
-            Wall_idx = 15;
+            Wall_idx = Maze_Limit;
             Walls[x_pos][y_pos] = East;
 
-            if (x_pos + 1 < 15)
+            if (x_pos + 1 < Maze_Limit)
                 Walls[x_pos + 1][y_pos] = West;
         }
         if (API_wallLeft())
@@ -447,7 +441,7 @@ int Update_Walls(int x_pos, int y_pos)
             Wall_idx = 17;
             Walls[x_pos][y_pos] = South;
 
-            if (y_pos + 1 < 15)
+            if (y_pos + 1 < Maze_Limit)
                 Walls[x_pos][y_pos + 1] = North;
         }
         if (API_wallLeft() && API_wallFront())
@@ -488,7 +482,7 @@ int Update_Walls(int x_pos, int y_pos)
             Wall_idx = 23;
             Walls[x_pos][y_pos] = South;
 
-            if (y_pos + 1 < 15)
+            if (y_pos + 1 < Maze_Limit)
                 Walls[x_pos][y_pos + 1] = North;
         }
         if (API_wallRight())
