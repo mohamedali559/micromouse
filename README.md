@@ -6,8 +6,8 @@ This README file provides an overview of the design details starting from the ro
 
 <div style="display: flex;">
     <img src="https://github.com/user-attachments/assets/a3dcaf06-35f1-4eba-b373-7a1086af5753" alt="After Power Circuit" style="Height: 250px; padding: 5px;">
-<!--     <img src="./images/back_view.jpg" alt="Image 2" style="Height: 250px; padding: 5px;">
-    <img src="./images/top_view.jpg" alt="Image 3" style="Height: 250px; padding: 5px;"> -->
+    <img src="https://github.com/user-attachments/assets/a702d02c-65c8-454d-bf29-d570bcb35345" alt="After Power Circuit" style="Height: 250px; padding: 5px;">
+    <img src="https://github.com/user-attachments/assets/6daad120-ade1-4d14-880a-48fb4a05f945" alt="After Power Circuit" style="Height: 250px; padding: 5px;">
 </div>
 
 ## Component Selection
