@@ -14,9 +14,9 @@ This README file provides an overview of the design details starting from the ro
 
 ## Component Selection
 
-### Microcontroller: STM32F405
+### Microcontroller: STM32F401RCT6
 
-When developing high-speed micro mice, the choice of microcontroller plays a critical role. It's essential to opt for a high-performance microcontroller that also offers sufficient memory capabilities. In our project, we have carefully considered these factors and selected the STM32F405 microcontroller from the STM32 variations. This microcontroller falls within the STM32F2, STM32F4, and STM32F7 families, all of which are known for their high performance. 
+When developing high-speed micro mice, the choice of microcontroller plays a critical role. It's essential to opt for a high-performance microcontroller that also offers sufficient memory capabilities. In our project, we have carefully considered these factors and selected the STM32F401RCT6 microcontroller from the STM32 variations. This microcontroller , which is known for it's high performance. 
 
 The STM32F405 microcontroller stands out due to its potent ARM Cortex-M4 core, generous Flash and RAM resources, and efficient implementation of intricate algorithms for maze-solving and motion control. With up to 15 communication interfaces, two 12-bit DACs, three 12-bit ADCs, and ample EEPROM support, the STM32F405 offers a comprehensive set of features that align well with our project's requirements.
 
