@@ -1,7 +1,9 @@
 # Momentum Micromouse Project
 
 Welcome to the repository for the Momentum Micromouse project developed for IEEE Victories 3 by the MicroSauraus team.
+
 In this project, we present our efforts to design and build a micromouse robot capable of navigating a maze autonomously.
+
 This README file provides an overview of the design details starting from the rough sketch.
 
 <div style="display: flex;">
