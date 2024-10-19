@@ -5,7 +5,7 @@ In this project, we present our efforts to design and build a micromouse robot c
 This README file provides an overview of the design details starting from the rough sketch.
 
 <div style="display: flex;">
-    <img src ="https://github.com/mmmmm222/CIS/assets/159199505/b30dd6dc-d133-4061-b36b-bf3b14894989" width = "600" height = "500">
+    <img src ="https://github.com/user-attachments/assets/a3dcaf06-35f1-4eba-b373-7a1086af5753" width = "600" height = "500">
     
 </div>
 
