@@ -1,6 +1,3 @@
-# بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
-
-
 # Momentum Micromouse Project
 
 Welcome to the repository for the Momentum Micromouse project developed for IEEE Victories 3 by the MicroSauraus team.
