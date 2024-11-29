@@ -7,9 +7,9 @@ In this project, we present our efforts to design and build a micromouse robot c
 This README file provides an overview of the design details starting from the rough sketch.
 
 <div style="display: flex;">
-    <img src="https://github.com/user-attachments/assets/a3dcaf06-35f1-4eba-b373-7a1086af5753" alt="After Power Circuit" style="Height: 350px; padding: 10px;">
-    <img src="https://github.com/user-attachments/assets/a702d02c-65c8-454d-bf29-d570bcb35345" alt="After Power Circuit" style="Height: 350px; padding: 10px;">
-    <img src="https://github.com/user-attachments/assets/6daad120-ade1-4d14-880a-48fb4a05f945" alt="After Power Circuit" style="Height: 350px; padding: 10px;">
+    <img src="https://github.com/user-attachments/assets/a3dcaf06-35f1-4eba-b373-7a1086af5753" alt="After Power Circuit" style="Height: 300px; padding: 10px;">
+    <img src="https://github.com/user-attachments/assets/a702d02c-65c8-454d-bf29-d570bcb35345" alt="After Power Circuit" style="Height: 300px; padding: 10px;">
+    <img src="https://github.com/user-attachments/assets/6daad120-ade1-4d14-880a-48fb4a05f945" alt="After Power Circuit" style="Height: 300px; padding: 10px;">
 </div>
 
 ## Component Selection
