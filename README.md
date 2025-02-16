@@ -35,31 +35,27 @@ The SWD (Serial Wire Debug) mode of the ST-Link V2 provides an efficient method 
 - SFH4545: The SFH4545 IR emitter stands as our choice for its efficient and focused infrared emission. With a narrow half angle of 5 degrees, it significantly improves the accuracy of our distance measurement and obstacle detection systems. 
 - TEFT4300: The TEFT4300 IR Receiver is selected for its sensitivity and reliability in detecting the emitted infrared signals, enabling precise distance measurements.
 
-### Gyroscope: L3GD20HTR
+### Gyroscope: MPU6050 IMU
 Elevated sensitivity enables the detection of minute angular velocity changes, a pivotal feature for meticulous motion tracking demands. With minimal power consumption, it seamlessly aligns with battery-powered applications, ensuring extended operational endurance. Its compact form factor further enhances its adaptability, effortlessly integrating into various devices and augmenting the efficiency of our micromouse's design.
 
 
-### Motor: N20-500RPM with Gear Ratio 30:1, 7PPR Encoder
+### Motor: DC Motor GA25-370 with Encoder 2kg 280RPM
 
 The N20-500RPM motor, paired with a gear box of ratio 30:1, strikes a balance between speed and torque. This combination provides the necessary power to propel the robot through the maze while maintaining control, maneuverability and a low stall current of 0.6A. 7PPR compatible encoder provides 28 Counts Per Revolution(CPR). Compatible D-hole rubber wheel with 32mm diameter and 3mm apecture is selected.
 $$\texttt{Speed}_{max}= \frac{500\times 2\pi}{60}\cdot 0.016=0.83ms^{-1}$$
 $$\texttt{Accuracy} = \frac{2\pi\times 0.016}{30\times 28}= 1.196\times10^{-4}m/count=0.12mm/count $$
 
-### Motor Drivers: TC4427, ZXMHC3F38148
+### Motor Drivers: L298
 
 - TC4427: We've selected the TC4427 motor driver for its fast switching capabilities, ensuring precise control over the motor's speed and direction.
 - ZXMHC3F38148: This motor driver complements the TC4427, offering additional motor control options and enhancing overall performance.
 
 ### User Interface
 
-- OLED Display: The OLED display serves as an informative interface, displaying relevant data and status information during development and testing phases. Considering high-update speed requirement SPI communication is used to interface with STM32
-- Buzzer: We've integrated a buzzer to provide auditory feedback, aiding in debugging and providing alerts for specific events.
-- HC-06 Bluetooth Module: The HC-06 module facilitates wireless communication with the micromouse, enabling remote debugging and configuration adjustments.
+- HC-05 Bluetooth Module: The HC-05 module facilitates wireless communication with the micromouse, enabling remote debugging and configuration adjustments.
 
 ### Battery
-Our micromouse project relies on a series configuration of two Li-ion 3.7V batteries, meticulously chosen to strike a harmonious balance between weight, size, and power supply capability. While our initial preference was for 850mAh batteries to achieve a lightweight and compact design, we opted for 1100mAh batteries with a 25C discharge rate for debugging purposes. This decision not only aligns with our goal of 10 minutes of operation but also offers ample power for efficient debugging while maintaining the project's core attributes.
-
-***See the file [components.xlsx](./components.xlsx) for complete description of components with order details***
+Our micromouse project relies on a series configuration of two Li-ion 3.7V batteries, meticulously chosen to strike a harmonious balance between weight, size, and power supply capability. we opted for 500mAh batteries for debugging purposes.
 
 ## PCB Design
 
