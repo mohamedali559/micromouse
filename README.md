@@ -60,8 +60,10 @@ Our micromouse project relies on a series configuration of three Li-ion 3.7V bat
 Thrilled to share that we secured 2nd place in the third edition of the Victories competition, proudly organized by IEEE MSB!
 
 <div style="display: flex;">
-    <img src="[./images/team2.jpg](https://github.com/user-attachments/assets/7c161231-2880-48d7-bfd4-6001e322d98b)" alt="Winners" style="Height: 200px; padding: 5px;">
+    <img src="https://github.com/user-attachments/assets/7c161231-2880-48d7-bfd4-6001e322d98b" alt="Winners" style="Height: 300px; padding: 10px;">
 </div>
+
+
 
 
 Feel free to [contact us](mailto:shansanjithofficial@gmail.com). 
