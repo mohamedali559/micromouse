@@ -54,7 +54,7 @@ It supports motor supply voltages up to 46V and can deliver up to 2A per channel
 HC-05 Bluetooth Module: The HC-05 module facilitates wireless communication with the micromouse, enabling remote debugging and configuration adjustments.
 
 ### Battery
-Our micromouse project relies on a series configuration of two Li-ion 3.7V batteries, meticulously chosen to strike a harmonious balance between weight, size, and power supply capability. we opted for 500mAh batteries for debugging purposes.
+Our micromouse project relies on a series configuration of three Li-ion 3.7V batteries, meticulously chosen to strike a harmonious balance between weight, size, and power supply capability. we opted for 500mAh batteries for debugging purposes.
 
 ## PCB Design
 
