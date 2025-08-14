@@ -27,7 +27,7 @@ The SWD (Serial Wire Debug) mode of the ST-Link V2 provides an efficient method 
 
 
 ### Voltage Regulator: LM2596S
-- a high-efficiency buck (step-down) regulator that can handle up to 3A output current.
+a high-efficiency buck (step-down) regulator that can handle up to 3A output current.
 It accepts an input voltage of about 4–40V and provides an adjustable output of 1.25–35V via a potentiometer.
 
 ### Infrared Components: SFH4545 (IR Emitter) and TEFT4300 (IR Receiver)
@@ -46,12 +46,12 @@ $$\texttt{Accuracy} = \frac{2\pi\times 0.016}{30\times 28}= 1.196\times10^{-4}m/
 
 ### Motor Drivers: L298
 
-- TC4427: We've selected the TC4427 motor driver for its fast switching capabilities, ensuring precise control over the motor's speed and direction.
-- ZXMHC3F38148: This motor driver complements the TC4427, offering additional motor control options and enhancing overall performance.
+a dual H-bridge driver capable of controlling two DC motors or one stepper motor.
+It supports motor supply voltages up to 46V and can deliver up to 2A per channel.
 
 ### User Interface
 
-- HC-05 Bluetooth Module: The HC-05 module facilitates wireless communication with the micromouse, enabling remote debugging and configuration adjustments.
+HC-05 Bluetooth Module: The HC-05 module facilitates wireless communication with the micromouse, enabling remote debugging and configuration adjustments.
 
 ### Battery
 Our micromouse project relies on a series configuration of two Li-ion 3.7V batteries, meticulously chosen to strike a harmonious balance between weight, size, and power supply capability. we opted for 500mAh batteries for debugging purposes.
