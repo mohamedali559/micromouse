@@ -26,10 +26,9 @@ While the ESP32 also presents itself as a viable option with its wireless commun
 The SWD (Serial Wire Debug) mode of the ST-Link V2 provides an efficient method for debugging and programming microcontroller. With SWD, we can access real-time debugging information, set breakpoints, and upload firmware seamlessly, reducing development time and ensuring precise control over our micromouse's behavior.
 
 
-### Voltage Regulators: TPS76850, AMS1117, TPS73633
-- TPS76850: We've opted for the TPS76850 as a **low dropout voltage** 5V linear regulator to provide a stable power supply for the main components, ensuring reliable operation. (Alternative Option: MIC39101)
-- AMS1117: The AMS1117 3.3V linear regulator is selected to power the IR Receiver, providing a clean and regulated voltage source for accurate sensor readings.
-- TPS73633: This **low drop voltage** linear regulator is used to power the microcontroller, ensuring a stable and noise-free power source with enough current capablity for high performance.
+### Voltage Regulator: LM2596S
+- a high-efficiency buck (step-down) regulator that can handle up to 3A output current.
+It accepts an input voltage of about 4–40V and provides an adjustable output of 1.25–35V via a potentiometer.
 
 ### Infrared Components: SFH4545 (IR Emitter) and TEFT4300 (IR Receiver)
 - SFH4545: The SFH4545 IR emitter stands as our choice for its efficient and focused infrared emission. With a narrow half angle of 5 degrees, it significantly improves the accuracy of our distance measurement and obstacle detection systems. 
