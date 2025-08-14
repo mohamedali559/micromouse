@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "API.h"
-#include "include.h"
-#include "Queue.h"
+#include "../include/API.h"
+#include "../include/include.h"
+#include "../include/Queue.h"
 
 // visited => To make indication if i have visited this cell before or not if yes then i can't make operations on it again
 // Walls => make some thing like the maze walls but using directions (Check Directions Section in include header file)
@@ -361,16 +361,6 @@ int main(int argc, char *argv[])
         printtt(buffer_x, buffer_y);
     }
 
-    //--------------------------------------
-    //--------------------------------------
-    //--------------------------------------
-
-    // the code where here!!!!!!!!
-
-    //--------------------------------------
-    //--------------------------------------
-    //--------------------------------------
-
     return 0;
 }
 
@@ -449,12 +439,7 @@ int neighbour_isValid(int neighbour_x, int neighbour_y, int Neighbour_Pos)
 
 //-----------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
+
 
 // update in simulator
 int Update_Walls(int x_pos, int y_pos)
@@ -661,12 +646,7 @@ int Update_Walls(int x_pos, int y_pos)
 
 //-----------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------
+
 
 void printt(char *text)
 {
@@ -775,128 +755,3 @@ void Wall_printer(void)
         break;
     }
 }
-
-// while (!isEmpty(&q))
-// {
-
-//     poped = dequeue(&q);
-//     Get_neighbours(poped.x, poped.y);
-//     if (neighbour_isValid(neighbour_1_x, neighbour_1_y, East))
-//     {
-//         Maze[neighbour_1_x][neighbour_1_y] = Maze[poped.x][poped.y] + 1;
-//         enqueue(&q, neighbour_1_x, neighbour_1_y);
-//     }
-//     if (neighbour_isValid(neighbour_2_x, neighbour_2_y, West))
-//     {
-//         Maze[neighbour_2_x][neighbour_2_y] = Maze[poped.x][poped.y] + 1;
-//         enqueue(&q, neighbour_2_x, neighbour_2_y);
-//     }
-//     if (neighbour_isValid(neighbour_3_x, neighbour_3_y, North))
-//     {
-//         Maze[neighbour_3_x][neighbour_3_y] = Maze[poped.x][poped.y] + 1;
-//         enqueue(&q, neighbour_3_x, neighbour_3_y);
-//     }
-//     if (neighbour_isValid(neighbour_4_x, neighbour_4_y, South))
-//     {
-//         Maze[neighbour_4_x][neighbour_4_y] = Maze[poped.x][poped.y] + 1;
-//         enqueue(&q, neighbour_4_x, neighbour_4_y);
-//     }
-
-//     Make_visited(neighbour_1_x, neighbour_1_y);
-//     Make_visited(neighbour_2_x, neighbour_2_y);
-//     Make_visited(neighbour_3_x, neighbour_3_y);
-//     Make_visited(neighbour_4_x, neighbour_4_y);
-//     /////////////////////////////////////////////////////////////////////////////////////////////////////
-//     QueueNode top = Front(&q);
-//     // printf("x=%d  y=%d\n", top.x, top.y);
-
-//     //-------------------------------------------------------------------------
-
-//     for (int i = 0; i < 16; i++)
-//     {
-//         for (int j = 0; j < 16; j++)
-//         {
-//             visited[i][j] = 0;
-//         }
-//     }
-
-//     //-------------------------------------------------------------------------
-//     //-------------------------------------------------------------------------
-
-//     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//     Get_neighbours(curr_x_pos, curr_y_pos);
-//     if (neighbour_isValid(neighbour_1_x, neighbour_1_y, East) && Maze[neighbour_1_x][neighbour_1_y] == (Maze[curr_x_pos][curr_y_pos] - 1))
-//     {
-//         switch (Direction)
-//         {
-//         case North:
-//             API_turnRight();
-//             break;
-//         case South:
-//             API_turnLeft();
-//             break;
-//         case West:
-//             API_turnLeft();
-//             API_turnLeft();
-//             break;
-//         }
-//         API_moveForward();
-//         curr_x_pos++;
-//     }
-//     else if (neighbour_isValid(neighbour_2_x, neighbour_2_y, West) && Maze[neighbour_2_x][neighbour_2_y] == (Maze[curr_x_pos][curr_y_pos] - 1))
-//     {
-//         switch (Direction)
-//         {
-//         case North:
-//             API_turnLeft();
-//             break;
-//         case South:
-//             API_turnRight();
-//             break;
-//         case East:
-//             API_turnLeft();
-//             API_turnLeft();
-//             break;
-//         }
-//         API_moveForward();
-//         curr_x_pos--;
-//     }
-//     else if (neighbour_isValid(neighbour_3_x, neighbour_3_y, North) && Maze[neighbour_3_x][neighbour_3_y] == (Maze[curr_x_pos][curr_y_pos] - 1))
-//     {
-//         switch (Direction)
-//         {
-//         case East:
-//             API_turnLeft();
-//             break;
-//         case West:
-//             API_turnRight();
-//             break;
-//         case South:
-//             API_turnLeft();
-//             API_turnLeft();
-//             break;
-//         }
-//         API_moveForward();
-//         curr_y_pos++;
-//         Direction = North; // Update direction after moving
-//     }
-//     else if (neighbour_isValid(neighbour_4_x, neighbour_4_y, South) && Maze[neighbour_4_x][neighbour_4_y] == (Maze[curr_x_pos][curr_y_pos] - 1))
-//     {
-//         switch (Direction)
-//         {
-//         case East:
-//             API_turnRight();
-//             break;
-//         case West:
-//             API_turnLeft();
-//             break;
-//         case North:
-//             API_turnLeft();
-//             API_turnLeft();
-//             break;
-//         }
-//         API_moveForward();
-//         curr_y_pos--;
-//         Direction = South; // Update direction after moving
-//     }
-// }
