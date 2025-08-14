@@ -56,84 +56,12 @@ HC-05 Bluetooth Module: The HC-05 module facilitates wireless communication with
 ### Battery
 Our micromouse project relies on a series configuration of three Li-ion 3.7V batteries, meticulously chosen to strike a harmonious balance between weight, size, and power supply capability. we opted for 500mAh batteries for debugging purposes.
 
-## PCB Design
-
-The PCB design is set at dimensions of 98mm by 74mm. This deliberate size choice allows for possible future expansion, including diagonal runs or extra components. The design maintains compatibility with the micromouse challenge's limitations. Furthermore, this sizing aligns with the cost-effective PCB manufacturing boundary of 100mm by 100mm provided by JLCPCB. 
-**Design Files** could be viewed [here](./PCB/).
-
-Understand the design bettery by looking at the [schematic](./PCB/Design/schematic.pdf) and [layout](./PCB/Design/layout.pdf).
-
-### Design Considerations
-1. **Overlay Labels**: Ensured clear overlay labels, including indicators for the positive side of batteries, components placed within the compact size constraints, and proper naming of SWD interface pins and motor pins.
-2. **Ground Separation**: Maintained the separation of motor ground, analog ground, and main ground until the battery terminal. This seperation is also upheld during the copper pouring process. The isolation of motor ground addresses potential signal noise that could impact microcontroller performance. Furthermore, AGND was designated as a noise-free ground for components like the gyroscope and IR receiver, which is particularly sensitive to ground noise.
-3. **Trace Widths**: To accommodate high current flow, we implemented a trace width of 30mil. For tracks originating from the microcontroller, an 11mil width was chosen, while a width of 15mil was used for most tracks. Notably, the trace widths for high current paths were tailored for connections involving the battery, motor ground, and motor drivers to the motor header. Clearance values were chosen in accordance with manufacturer capablities.
-4. **Copper Pours**: Deliberate copper pours were employed to enhance thermal conductivity, especially for high current paths and integrated circuits. The chosen nets for copper pours encompass battery positive voltage, motor ground, 3V3 STM32 supply, analog ground for the gyroscope, and general ground connections. The selection of pour areas was made with meticulous attention to detail, ensuring optimal performance and functionality.
-5. **Symmetric Component Placement**: Our design emphasizes symmetrical placement of components, taking into account the inherent symmetry of the mouse body. This approach extends to the distribution of component placements, ensuring uniform weight distribution across the micromouse.
-6. **IR Sensor Guidelines**: To ensure precise alignment of IR sensors, we incorporated accurately aligned guide lines corresponding to specific angular measurements. This meticulous approach guarantees the optimal positioning and performance of the IR sensors. We accomadate two IR configurations by having an extra pad and guideline.
-
-### Design Flow
-1. Finishing the Placements and Outer Shape
-
-<img src="./images/placement.jfif" alt="Image Description" style="width:300px; height:auto;">
-
-2. Routing the Design using Different Widths - Keep a rule of thumb!
-
-<div style="display: flex; justify-content: space-between;">
-  <img src="./images/top_route.jfif" alt="Top Track" style="width: 30%;">
-  <img src="./images/bottom_route.jfif" alt="Bottom Track" style="width: 27%;">
-  <img src="./images/route.jfif" alt="Tracks" style="width: 30%;">
-</div>
-
-3. Filling Copper in our Design.
-
-<div style="display: flex; justify-content: space-between;">
-  <img src="./images/top_pour.jfif" alt="Top Pour" style="width: 30%;">
-  <img src="./images/bottom_pour.jfif" alt="Bottom Pour" style="width: 28%;">
-</div>
-<br>
-Here is the complete PCB in a 3D view.
-<br>
-<img src="./images/3d_layout.jfif" alt="Image Description" style="width:400px; height:auto;">
-
-## Soldering
-1. **Power Circuit** : We begin by soldering the power circuit components. Once completed, we use test points to verify the voltage output, comparing it with the expected values.
-
-2. **Main Controller** : Next, we move on to soldering the microcontroller and establish a connection to upload the code. This step allows us to verify the basic functionality of the microcontroller.
-
-3. **Passive Components** : After confirming the proper functioning of the microcontroller, we proceed to solder all other components to complete the circuit. This step ensures that all elements of the project are integrated seamlessly.
-
-***Note***: We paid special attention to soldering the gyroscope, adhering to its footprint specifications to ensure precise and reliable connections. Infact we confirmed the connections from microcontroller end.
-
-<div style="display: flex;">
-    <img src="./images/after_power.jpg" alt="After Power Circuit" style="Height: 200px; padding: 5px;">
-    <img src="./images/after_power2.jpg" alt="Image 2" style="Height: 200px; padding: 5px;">
-    <img src="./images/after_microcontroller.jpg" alt="Image 3" style="Height: 200px; padding: 5px;">
-    <img src="./images/pcb_working.gif" alt="Image 5" style="Height: 200px; padding: 5px;">
-    <img src="./images/soldered.jpg" alt="Image 4" style="Height: 200px; padding: 5px;">
-</div>
-
-
-## Firmware
-
 ## Achievements
-We are proud to announce that our project achieved remarkable success at SLIIT Robofest 2023. We secured the prestigious position of 2nd runners up.
+Thrilled to share that we secured 2nd place in the third edition of the Victories competition, proudly organized by IEEE MSB!
 
 <div style="display: flex;">
-    <img src="./images/team2.jpg" alt="After Power Circuit" style="Height: 200px; padding: 5px;">
-    <img src="./images/team3.jpg" alt="Image 2" style="Height: 200px; padding: 5px;">
+    <img src="[./images/team2.jpg](https://github.com/user-attachments/assets/7c161231-2880-48d7-bfd4-6001e322d98b)" alt="Winners" style="Height: 200px; padding: 5px;">
 </div>
-
-**Search Run**<br>
-<img src="./images/search_run.gif" alt="Image Description" style="width:500px; height:auto;">
-
-
-## Basic Tests
-1. **TEST 1:** Going straight with the help of encoder<br>
-    <img src="./images/straight_run.gif" alt="Image Description" style="width:500px; height:auto;">
-2. **TEST 2:** Aligning the robot normal to a wall in front on a specified distance.<br>
-    <img src="./images/front_align.gif" alt="Image Description" style="width:500px; height:auto;">
-3. **TEST 3:** Compass nature using gyroscope reading.<br>
-    <img src="./images/point_direction.gif" alt="Image Description" style="width:500px; height:auto;">
 
 
 Feel free to [contact us](mailto:shansanjithofficial@gmail.com). 
