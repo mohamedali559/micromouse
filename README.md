@@ -60,22 +60,10 @@ Our micromouse project relies on a series configuration of three Li-ion 3.7V bat
 Thrilled to share that we secured 2nd place in the third edition of the Victories competition, proudly organized by IEEE MSB!
 
 <div style="display: flex;">
-    <img src="https://github.com/user-attachments/assets/7c161231-2880-48d7-bfd4-6001e322d98b" alt="Winners" style="Height: 600px; padding: 10px;">
+    <img src="https://github.com/user-attachments/assets/7c161231-2880-48d7-bfd4-6001e322d98b" alt="Winners" style="Height: 500px; padding: 10px;">
 </div>
 
 
 
 
 Feel free to [contact us](mailto:shansanjithofficial@gmail.com). 
-
-
-## Limitations
-1. Keeping the wheels outside the chasis makes it harder for the mice to recover when the wheel hits wall.
-2. Period between updates of parameters is limited by the SPI communication speed of gyroscope in our implementation. Using analog gyroscope is advantageous.
-
-
-## References
-1. [STM32-ST Link V2 for programming STM32 microcontrollers.](https://www.robotics-university.com/2016/05/mini-st-linkv2-programming-tool-for-stm8-and-stm32.html)
-2. [Interfacing HC-06 bluetooth module via USART communication.](https://www.etechnophiles.com/hc06-pinout-specifications-datasheet/)
-3. [Interfacing OLED display via SPI communication.](https://github.com/lamik/OLED_SSD1306_STM32_HAL)
-
