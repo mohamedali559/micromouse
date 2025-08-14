@@ -56,6 +56,12 @@ HC-05 Bluetooth Module: The HC-05 module facilitates wireless communication with
 ### Battery
 Our micromouse project relies on a series configuration of three Li-ion 3.7V batteries, meticulously chosen to strike a harmonious balance between weight, size, and power supply capability. we opted for 500mAh batteries for debugging purposes.
 
+### Simulation
+We used a virtual platform calles "MMS" designed to emulate Micromouse maze-solving challenges.
+It allows testing and refining navigation algorithms without the need for physical hardware.
+<img src="https://github.com/user-attachments/assets/45ba97fa-236d-4db0-a1c5-3bfe1796e22b" style="Height: 400px; padding: 10px;">
+
+
 ## Achievements
 Thrilled to share that we secured 2nd place in the third edition of the Victories competition, proudly organized by IEEE MSB!
 
