@@ -60,7 +60,7 @@ Our micromouse project relies on a series configuration of three Li-ion 3.7V bat
 We used a virtual platform calles "MMS" designed to emulate Micromouse maze-solving challenges.
 It allows testing and refining navigation algorithms without the need for physical hardware.
 
-<img src="https://github.com/user-attachments/assets/45ba97fa-236d-4db0-a1c5-3bfe1796e22b" style="Height: 400px; padding: 10px;">
+<img src="https://github.com/user-attachments/assets/45ba97fa-236d-4db0-a1c5-3bfe1796e22b" style="Height: 600px; padding: 10px;">
 
 
 ## Achievements
