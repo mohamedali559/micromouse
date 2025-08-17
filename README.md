@@ -64,8 +64,8 @@ It allows testing and refining navigation algorithms without the need for physic
 
 ## Design
 <div style="display: flex;">
-    <img src="https://github.com/user-attachments/assets/fbd6e111-582d-43e0-b582-361424dbbcf2" alt="Winners" style="Height: 300px; padding: 10px;">
-    <img src="https://github.com/user-attachments/assets/33afd6a3-489e-40eb-8c63-49495609f9f8" alt="Winners" style="Height: 300px; padding: 10px;">
+    <img src="https://github.com/user-attachments/assets/fbd6e111-582d-43e0-b582-361424dbbcf2" alt="Winners" style="Height: 280px; padding: 10px;">
+    <img src="https://github.com/user-attachments/assets/33afd6a3-489e-40eb-8c63-49495609f9f8" alt="Winners" style="Height: 280px; padding: 10px;">
     <img src="https://github.com/user-attachments/assets/47a1c68d-a9b4-4cb6-98b4-9b21b0538274" alt="Winners" style="Height: 300px; padding: 10px;">
 </div>
 
