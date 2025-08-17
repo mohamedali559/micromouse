@@ -62,6 +62,12 @@ It allows testing and refining navigation algorithms without the need for physic
 
 <img src="https://github.com/user-attachments/assets/45ba97fa-236d-4db0-a1c5-3bfe1796e22b" style="Height: 450px; padding: 10px;">
 
+## Design
+<div style="display: flex;">
+    <img src="https://github.com/user-attachments/assets/47a1c68d-a9b4-4cb6-98b4-9b21b0538274" alt="Winners" style="Height: 800px; padding: 10px;">
+    <img src="https://github.com/user-attachments/assets/fbd6e111-582d-43e0-b582-361424dbbcf2" alt="Winners" style="Height: 800px; padding: 10px;">
+</div>
+
 
 ## Achievements
 Thrilled to share that we secured 2nd place in the third edition of the Victories competition, proudly organized by IEEE MSB!
